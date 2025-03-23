@@ -2,6 +2,7 @@ from flask import Flask, render_template
 import os
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev')
 
 @app.route('/')
 def index():
