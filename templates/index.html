@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anbiru - Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <span class="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </span>
+            </button>
+            <div class="nav-content">
+                <a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a>
+                <a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a>
+                <a href="#projects" class="nav-link"><i class="fas fa-project-diagram"></i> Projects</a>
+                <a href="#sns" class="nav-link"><i class="fas fa-share-alt"></i> SNS</a>
+                <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="section">
+            <div class="decorative-circle circle-1"></div>
+            <div class="container">
+                <h1 class="main-title">Welcome&nbsp;to&nbsp;Anbiru&nbsp;Portfolio</h1>
+                <p class="subtitle">I'm&nbsp;Web&nbsp;Developer&nbsp;&amp;&nbsp;IT&nbsp;Engineer</p>
+                <div class="scroll-indicator">
+                    <span>Scroll Down</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="decorative-circle circle-2"></div>
+            <div class="container">
+                <h2 class="section-title">About Anbiru</h2>
+                <div class="about-content">
+                    <div class="about-profile">
+                        <div class="profile-icon">
+                            <img src="{{ url_for('static', filename='images/profile.webp') }}" alt="Profile Icon">
+                        </div>
+                        <div class="profile-text">
+                            <p class="profile-headline">💻 フルスタックエンジニア｜幅広い技術と高い対応力で課題解決を支援</p>
+                            <div class="profile-description">
+                                <p>福島県福島市出身で、プログラミングの専門学校を首席で卒業しました。</p>
+                                <p>PHPとJavaScriptを中心に7年以上の実務経験があり、個人開発を含めると10年以上にわたってWebシステム開発に携わっています。</p>
+                                <p>バックエンドからフロントエンドまで一貫して対応できるフルスタックエンジニアとして、要件定義から設計、開発、運用保守まで幅広く対応可能です。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-code"></i>
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Certificates</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="decorative-circle circle-1"></div>
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Backend</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>Flask</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Tools</h3>
+                        <ul>
+                            <li>Git</li>
+                            <li>VS Code</li>
+                            <li>Docker</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-container">
+                    <div class="projects-page">
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <img src="{{ url_for('static', filename='images/project1.webp') }}" alt="Project 1">
+                                <h3>Project 1</h3>
+                                <p>工事中</p>
+                                <div class="project-links">
+                                    <span class="btn disabled">View</span>
+                                    <span class="btn disabled">Source</span>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <img src="{{ url_for('static', filename='images/project2.webp') }}" alt="Project 2">
+                                <h3>Project 2</h3>
+                                <p>工事中</p>
+                                <div class="project-links">
+                                    <span class="btn disabled">View</span>
+                                    <span class="btn disabled">Source</span>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <img src="{{ url_for('static', filename='images/project3.webp') }}" alt="Project 3">
+                                <h3>Project 3</h3>
+                                <p>工事中</p>
+                                <div class="project-links">
+                                    <span class="btn disabled">View</span>
+                                    <span class="btn disabled">Source</span>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <img src="{{ url_for('static', filename='images/project4.webp') }}" alt="Project 4">
+                                <h3>Project 4</h3>
+                                <p>工事中</p>
+                                <div class="project-links">
+                                    <span class="btn disabled">View</span>
+                                    <span class="btn disabled">Source</span>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <img src="{{ url_for('static', filename='images/project5.webp') }}" alt="Project 5">
+                                <h3>Project 5</h3>
+                                <p>工事中</p>
+                                <div class="project-links">
+                                    <span class="btn disabled">View</span>
+                                    <span class="btn disabled">Source</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects-page">
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <img src="{{ url_for('static', filename='images/project6.webp') }}" alt="Project 6">
+                                <h3>Project 6</h3>
+                                <p>工事中</p>
+                                <div class="project-links">
+                                    <span class="btn disabled">View</span>
+                                    <span class="btn disabled">Source</span>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <img src="{{ url_for('static', filename='images/project7.webp') }}" alt="Project 7">
+                                <h3>Project 7</h3>
+                                <p>工事中</p>
+                                <div class="project-links">
+                                    <span class="btn disabled">View</span>
+                                    <span class="btn disabled">Source</span>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <img src="{{ url_for('static', filename='images/project8.webp') }}" alt="Project 8">
+                                <h3>Project 8</h3>
+                                <p>工事中</p>
+                                <div class="project-links">
+                                    <span class="btn disabled">View</span>
+                                    <span class="btn disabled">Source</span>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <img src="{{ url_for('static', filename='images/project9.webp') }}" alt="Project 9">
+                                <h3>Project 9</h3>
+                                <p>工事中</p>
+                                <div class="project-links">
+                                    <span class="btn disabled">View</span>
+                                    <span class="btn disabled">Source</span>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <img src="{{ url_for('static', filename='images/project10.webp') }}" alt="Project 10">
+                                <h3>Project 10</h3>
+                                <p>工事中</p>
+                                <div class="project-links">
+                                    <span class="btn disabled">View</span>
+                                    <span class="btn disabled">Source</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-navigation">
+                    <button class="nav-btn prev-btn" aria-label="Previous projects"><i class="fas fa-chevron-left"></i></button>
+                    <div class="projects-dots">
+                        <span class="dot active" data-page="0"></span>
+                        <span class="dot" data-page="1"></span>
+                    </div>
+                    <button class="nav-btn next-btn" aria-label="Next projects"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="sns" class="section">
+            <div class="container">
+                <h2 class="section-title">SNS</h2>
+                <div class="sns-content">
+                    <div class="social-links">
+                        <a href="https://x.com/muscat_engineer" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="social-btn twitter-btn">
+                            <i class="fab fa-twitter"></i>
+                            <span>X (Twitter)</span>
+                        </a>
+                        <a href="https://github.com/erikaambiru" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="social-btn github-btn">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/erika-anbiru-601037358/" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="social-btn linkedin-btn">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-content">
+                    <div class="contact-description">
+                        <p>お気軽にご連絡ください。</p>
+                    </div>
+                    <div class="contact-form">
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd_acTvdwvPT2yU4CXcQM3v142LsqkrOf083q00i8mifqE5Sg/viewform?embedded=true" 
+                            width="100%" 
+                            height="600" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0">
+                            読み込んでいます...
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
