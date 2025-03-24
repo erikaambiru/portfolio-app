@@ -158,3 +158,64 @@ window.addEventListener('wheel', (e) => {
         isScrolling = false;
     }
 }, { passive: false });
+
+// Contact Form
+async function sendMessage(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const formStatus = document.getElementById('formStatus');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    
+    // ボタンを無効化
+    submitBtn.disabled = true;
+    submitBtn.textContent = '送信中...';
+    
+    try {
+        const formData = {
+            name: form.name.value,
+            email: form.email.value,
+            message: form.message.value
+        };
+
+        const response = await fetch('/send_message', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            formStatus.textContent = 'メッセージを送信しました。';
+            formStatus.className = 'form-status success';
+            form.reset();
+        } else {
+            formStatus.textContent = data.error || 'エラーが発生しました。';
+            formStatus.className = 'form-status error';
+        }
+    } catch (error) {
+        formStatus.textContent = 'エラーが発生しました。';
+        formStatus.className = 'form-status error';
+    } finally {
+        // ボタンを再有効化
+        submitBtn.disabled = false;
+        submitBtn.textContent = '送信';
+        
+        // 3秒後にステータスメッセージを消す
+        setTimeout(() => {
+            formStatus.style.display = 'none';
+        }, 3000);
+    }
+
+    return false;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    if (form) {
+        form.addEventListener('submit', sendMessage);
+    }
+});
